@@ -67,7 +67,11 @@ if __name__ == "__main__":
 			print("\nStarting excution!");
 			time.sleep(0.5);
 			os.system("clear");
-			os.system("python ./"+folder+"/pyrun-main.py");
+			args = sys.argv[2:];
+			args_string = str();
+			for val in args:
+				args_string = args_string+val+" ";
+			os.system("python ./"+folder+"/pyrun-main.py "+args_string);
 			os.system("rm -r "+folder);
 			#print("PyRun: Folder removed...");
 		except FileExistsError:
